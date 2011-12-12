@@ -1,0 +1,5 @@
+C:\Dev\code_katas\bloom_filters\artifacts\bloom_filter.exe
+C:\Dev\code_katas\bloom_filters\artifacts\bloom_filter.pdb
+C:\Dev\code_katas\bloom_filters\source\bloom_filter\obj\Debug\bloom_filter.csprojResolveAssemblyReference.cache
+C:\Dev\code_katas\bloom_filters\source\bloom_filter\obj\Debug\bloom_filter.exe
+C:\Dev\code_katas\bloom_filters\source\bloom_filter\obj\Debug\bloom_filter.pdb

@@ -1,0 +1,15 @@
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\obj\Debug\bloom_filter.specs.csprojResolveAssemblyReference.cache
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\bin\Debug\bloom_filter.specs.dll
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\bin\Debug\bloom_filter.specs.pdb
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\bin\Debug\bloom_filter.exe
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\bin\Debug\developwithpassion.specifications.dll
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\bin\Debug\developwithpassion.specifications.rhinomocks.dll
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\bin\Debug\Machine.Fakes.Adapters.RhinoMocks.dll
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\bin\Debug\Machine.Fakes.dll
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\bin\Debug\Machine.Specifications.dll
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\bin\Debug\Rhino.Mocks.dll
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\bin\Debug\bloom_filter.pdb
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\bin\Debug\developwithpassion.specifications.pdb
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\bin\Debug\developwithpassion.specifications.rhinomocks.pdb
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\obj\Debug\bloom_filter.specs.dll
+C:\Dev\code_katas\bloom_filters\source\bloom_filter.specs\obj\Debug\bloom_filter.specs.pdb

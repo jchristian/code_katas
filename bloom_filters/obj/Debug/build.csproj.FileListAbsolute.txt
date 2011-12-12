@@ -1,0 +1,5 @@
+C:\Dev\code_katas\bloom_filters\bin\Debug\build.dll
+C:\Dev\code_katas\bloom_filters\bin\Debug\build.pdb
+C:\Dev\code_katas\bloom_filters\obj\Debug\build.csprojResolveAssemblyReference.cache
+C:\Dev\code_katas\bloom_filters\obj\Debug\build.dll
+C:\Dev\code_katas\bloom_filters\obj\Debug\build.pdb
