@@ -6,66 +6,64 @@ using prep.bf;
 
 namespace prep.specs
 {
-  public class SpellCheckerSpecs
-  {
-    public abstract class concern : Observes<SpellChecker>
+    public class SpellCheckerSpecs
     {
-    }
+        public abstract class concern : Observes<SpellChecker> {}
 
-    [Subject(typeof(SpellChecker))]
-    public class when_determining_if_a_word_is_valid : concern
-    {
-      public class and_the_words_hashes_are_in_the_bloom_filter
-      {
-        Establish c = () =>
+        [Subject(typeof(SpellChecker))]
+        public class when_determining_if_a_word_is_valid : concern
         {
-          word = "test";
-          var hash = 10;
+            public class and_the_words_hashes_are_in_the_bloom_filter
+            {
+                static bool does_the_word_exist;
+                static string word;
 
-          var hash_creator = depends.on<ICreateManyHashes>();
-          var bloom_filter = depends.on<ICheckIfIContainHashes>();
-          var hashes_for_the_word = new[] { hash };
+                Establish c = () =>
+                {
+                    word = "test";
+                    var hash = 10;
 
-          hash_creator.setup(x => x.get_hashes_for(word)).Return(hashes_for_the_word);
-          bloom_filter.setup(x => x.contains(hashes_for_the_word)).Return(true);
-        };
+                    var hash_creator = depends.on<ICreateManyHashes>();
+                    var bloom_filter = depends.on<ICheckIfIContainHashes>();
+                    var hashes_for_the_word = new[] { hash };
 
-        Because of = () =>
-          does_the_word_exist = sut.is_valid_word(word);
+                    hash_creator.setup(x => x.get_hashes_for(word)).Return(hashes_for_the_word);
+                    bloom_filter.setup(x => x.contains(hashes_for_the_word)).Return(true);
+                };
 
-        It should_return_true = () =>
-          does_the_word_exist.ShouldBeTrue();
+                Because of = () =>
+                    does_the_word_exist = sut.is_valid_word(word);
 
-        static bool does_the_word_exist;
-        static string word;
-      }
+                It should_return_true = () =>
+                    does_the_word_exist.ShouldBeTrue();
+            }
 
-      public class and_the_words_hashes_are_not_in_the_bloom_filter
-      {
-        Establish c = () =>
-        {
-          word = "test";
-          var hash = 10;
+            public class and_the_words_hashes_are_not_in_the_bloom_filter
+            {
+                static bool does_the_word_exist;
+                static string word;
 
-          var hash_creator = depends.on<ICreateManyHashes>();
-          var bloom_filter = depends.on<ICheckIfIContainHashes>();
-          depends.on<IEnumerable<string>>(new[] { word });
+                Establish c = () =>
+                {
+                    word = "test";
+                    var hash = 10;
 
-          var hashes_for_the_word = new[] { hash };
+                    var hash_creator = depends.on<ICreateManyHashes>();
+                    var bloom_filter = depends.on<ICheckIfIContainHashes>();
+                    depends.on<IEnumerable<string>>(new[] { word });
 
-          hash_creator.setup(x => x.get_hashes_for(word)).Return(hashes_for_the_word);
-          bloom_filter.setup(x => x.contains(hashes_for_the_word)).Return(false);
-        };
+                    var hashes_for_the_word = new[] { hash };
 
-        Because of = () =>
-          does_the_word_exist = sut.is_valid_word(word);
+                    hash_creator.setup(x => x.get_hashes_for(word)).Return(hashes_for_the_word);
+                    bloom_filter.setup(x => x.contains(hashes_for_the_word)).Return(false);
+                };
 
-        It should_return_false = () =>
-          does_the_word_exist.ShouldBeFalse();
+                Because of = () =>
+                    does_the_word_exist = sut.is_valid_word(word);
 
-        static bool does_the_word_exist;
-        static string word;
-      }
+                It should_return_false = () =>
+                    does_the_word_exist.ShouldBeFalse();
+            }
+        }
     }
-  }
 }

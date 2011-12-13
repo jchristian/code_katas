@@ -19,18 +19,21 @@ namespace prep.specs
             {
                 Establish c = () =>
                 {
-                    the_hashes = new[] {1};
-
-                    depends.on<IEnumerable<int>>(new[] {1});
+                    the_hash = 1;
+                    the_hashes = new[] {the_hash};
                 };
 
                 Because of = () =>
+                {
+                    sut.add(the_hash);
                     are_all_the_hashes_contained = sut.contains(the_hashes);
+                };
 
                 It should_return_true = () =>
                     are_all_the_hashes_contained.ShouldBeTrue();
 
                 static bool are_all_the_hashes_contained;
+                static int the_hash;
                 static IEnumerable<int> the_hashes;
             }
 
@@ -38,18 +41,23 @@ namespace prep.specs
             {
                 Establish c = () =>
                 {
-                    the_hashes = new[] { 1 };
-
-                    depends.on<IEnumerable<int>>(new[] { 2 });
+                    the_first_hash = 1;
+                    the_second_hash = 2;
+                    the_hashes = new[] { the_first_hash, the_second_hash };
                 };
 
                 Because of = () =>
+                {
+                    sut.add(the_first_hash);
                     are_all_the_hashes_contained = sut.contains(the_hashes);
+                };
 
                 It should_return_false = () =>
                     are_all_the_hashes_contained.ShouldBeFalse();
 
                 static bool are_all_the_hashes_contained;
+                static int the_first_hash;
+                static int the_second_hash;
                 static IEnumerable<int> the_hashes;
             }
         }

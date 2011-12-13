@@ -6,25 +6,22 @@ namespace prep.bf
 {
     public class BloomFilter : ICheckIfIContainHashes
     {
-        const int filter_lenght = 10000;
+        const int filter_length = 10000;
         BitArray filter;
 
-        public BloomFilter(IEnumerable<int> hashes)
+        public BloomFilter()
         {
-            initialize_filter(hashes);
+            filter = new BitArray(filter_length);
+        }
+
+        public void add(int the_hash)
+        {
+            filter[the_hash % filter_length] = true;
         }
 
         public bool contains(IEnumerable<int> hashes)
         {
             return hashes.All(x => filter[x % 10000]);
-        }
-
-        void initialize_filter(IEnumerable<int> hashes)
-        {
-            filter = new BitArray(filter_lenght);
-
-            foreach (var hash in hashes)
-                filter[hash % filter_lenght] = true;
         }
     }
 }
