@@ -53,6 +53,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="developwithpassion.specifications">
+      <HintPath>..\..\packages\developwithpassion.specifications.rhinomocks.0.4.24.3\lib\developwithpassion.specifications.dll</HintPath>
+    </Reference>
     <Reference Include="Machine.Specifications, Version=0.4.24.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -62,9 +65,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bf\BloomFilter.cs" />
+    <Compile Include="bf\EnglishDictionary.cs" />
     <Compile Include="bf\FrameworkHashFactory.cs" />
     <Compile Include="bf\HashCollectionFactory.cs" />
+    <Compile Include="bf\HashFactoryCollection.cs" />
+    <Compile Include="bf\ICheckIfIContainHashes.cs" />
     <Compile Include="bf\ICreateAnSingleHash.cs" />
+    <Compile Include="bf\ICreateManyHashes.cs" />
     <Compile Include="bf\SpellChecker.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>

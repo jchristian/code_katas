@@ -21,7 +21,7 @@ namespace prep.specs
                 Establish c = () =>
                 {
                     word = "test";
-                    var hash = 10;
+                    var hash = 1;
 
                     var hash_creator = depends.on<ICreateManyHashes>();
                     var bloom_filter = depends.on<ICheckIfIContainHashes>();
@@ -32,7 +32,7 @@ namespace prep.specs
                 };
 
                 Because of = () =>
-                    does_the_word_exist = sut.is_valid_word(word);
+                    does_the_word_exist = sut.is_word_in_dictionary(word);
 
                 It should_return_true = () =>
                     does_the_word_exist.ShouldBeTrue();
@@ -46,12 +46,10 @@ namespace prep.specs
                 Establish c = () =>
                 {
                     word = "test";
-                    var hash = 10;
+                    var hash = 1;
 
                     var hash_creator = depends.on<ICreateManyHashes>();
                     var bloom_filter = depends.on<ICheckIfIContainHashes>();
-                    depends.on<IEnumerable<string>>(new[] { word });
-
                     var hashes_for_the_word = new[] { hash };
 
                     hash_creator.setup(x => x.get_hashes_for(word)).Return(hashes_for_the_word);
@@ -59,11 +57,40 @@ namespace prep.specs
                 };
 
                 Because of = () =>
-                    does_the_word_exist = sut.is_valid_word(word);
+                    does_the_word_exist = sut.is_word_in_dictionary(word);
 
                 It should_return_false = () =>
                     does_the_word_exist.ShouldBeFalse();
             }
+        }
+
+        [Subject(typeof(SpellChecker))]
+        public class when_creating_the_spell_checker : concern
+        {
+            Establish c = () =>
+            {
+                var first_word = "first word";
+                var second_word = "second word";
+                first_set_of_hashes = new[] { 1 };
+                second_set_of_hashes = new[] { 2 };
+
+                var hash_creator = depends.on<ICreateManyHashes>();
+                bloom_filter = depends.on<ICheckIfIContainHashes>();
+                depends.on<IEnumerable<string>>(new[] { first_word, second_word });
+
+                hash_creator.setup(x => x.get_hashes_for(first_word)).Return(first_set_of_hashes);
+                hash_creator.setup(x => x.get_hashes_for(second_word)).Return(second_set_of_hashes);
+            };
+
+            It should_add_the_hashes_for_the_first_word_in_the_dictionary_to_the_bloom_filter = () =>
+                first_set_of_hashes.each(hash => bloom_filter.received(x => x.add(hash)));
+
+            It should_add_the_hashes_for_the_second_word_in_the_dictionary_to_the_bloom_filter = () =>
+                second_set_of_hashes.each(hash => bloom_filter.received(x => x.add(hash)));
+
+            static ICheckIfIContainHashes bloom_filter;
+            static int[] first_set_of_hashes;
+            static int[] second_set_of_hashes;
         }
     }
 }
