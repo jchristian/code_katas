@@ -5,3 +5,6 @@ C:\Dev\code_katas\patterns\decorator\app\obj\x86\Debug\app.exe
 C:\Dev\code_katas\patterns\decorator\app\obj\x86\Debug\app.pdb
 C:\Dev\code_katas\patterns\decorator\commands\app\obj\x86\Debug\app.exe
 C:\Dev\code_katas\patterns\decorator\commands\app\obj\x86\Debug\app.pdb
+C:\Dev\code_katas\patterns\decorator\commands\app\bin\Debug\app.exe
+C:\Dev\code_katas\patterns\decorator\commands\app\bin\Debug\app.pdb
+C:\Dev\code_katas\patterns\decorator\commands\app\obj\x86\Debug\app.csprojResolveAssemblyReference.cache
