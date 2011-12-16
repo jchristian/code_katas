@@ -21,7 +21,7 @@ namespace prep.bf
 
         public bool contains(IEnumerable<int> hashes)
         {
-            return hashes.All(x => filter[x % 10000]);
+            return hashes.All(x => filter[x % filter_length]);
         }
     }
 }

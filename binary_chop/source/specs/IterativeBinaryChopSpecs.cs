@@ -1,18 +1,18 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.moq;
 using Machine.Specifications;
-using source.recursive;
+using source.iterative;
 
 namespace source.specs
 {
-    public class RecursiveBinaryChopSpecs
+    public class IterativeBinaryChopSpecs
     {
         public abstract class concern : Observes<IFindAnItem,
-                                            RecursiveBinaryChop> { }
+                                            IterativeBinaryChop> { }
 
-        [Subject(typeof(RecursiveBinaryChop))]
+        [Subject(typeof(IterativeBinaryChop))]
         public class when_finding_the_item : concern
         {
             Establish c = () =>
