@@ -7,12 +7,12 @@ using source.class_base_recursion;
 
 namespace source.specs
 {
-    public class DecoratorBinaryChopSpecs
+    public class LazySingleChopSpecs
     {
         public abstract class concern : Observes<IFindAnItem,
-                                            DecoratorBinaryChop> { }
+                                            SingleChop> { }
 
-        [Subject(typeof(DecoratorBinaryChop))]
+        [Subject(typeof(SingleChop))]
         public class when_finding_the_item : concern
         {
             Establish c = () =>
@@ -23,7 +23,7 @@ namespace source.specs
                 test_cases = setup.test_cases;
                 message = setup.message;
 
-                actual_sut = new LazyDecoratorBinaryChop();
+                actual_sut = new LazySingleChop();
             };
 
             It should_return_the_index_of_the_item = () =>
@@ -32,7 +32,7 @@ namespace source.specs
             static int item_to_find;
             static List<Tuple<int, IList<int>>> test_cases;
             static Func<Tuple<int, IList<int>>, string> message;
-            static LazyDecoratorBinaryChop actual_sut;
+            static LazySingleChop actual_sut;
         }
     }
 }

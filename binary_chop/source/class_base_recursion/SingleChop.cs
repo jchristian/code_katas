@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace source.class_base_recursion
 {
-    public class DecoratorBinaryChop : IFindAnItem
+    public class SingleChop : IFindAnItem
     {
         IFindAnItem binary_chopper;
 
-        public DecoratorBinaryChop(IFindAnItem binary_chopper)
+        public SingleChop(IFindAnItem binary_chopper)
         {
             this.binary_chopper = binary_chopper;
         }

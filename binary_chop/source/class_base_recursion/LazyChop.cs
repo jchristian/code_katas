@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace source.class_base_recursion
 {
-    public class LazyBinaryChop : IFindAnItem
+    public class LazyChop : IFindAnItem
     {
         Func<IFindAnItem> factory;
 
-        public LazyBinaryChop(Func<IFindAnItem> factory)
+        public LazyChop(Func<IFindAnItem> factory)
         {
             this.factory = factory;
         }

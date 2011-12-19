@@ -58,9 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="class_base_recursion\DecoratorBinaryChop.cs" />
-    <Compile Include="class_base_recursion\LazyBinaryChop.cs" />
-    <Compile Include="class_base_recursion\LazyDecoratorBinaryChop.cs" />
+    <Compile Include="class_base_recursion\SingleChop.cs" />
+    <Compile Include="class_base_recursion\LazyChop.cs" />
+    <Compile Include="class_base_recursion\LazySingleChop.cs" />
     <Compile Include="IFindAnItem.cs" />
     <Compile Include="iterative\AnotherIterativeBinaryChop.cs" />
     <Compile Include="iterative\IterativeBinaryChop.cs" />
@@ -68,7 +68,7 @@
     <Compile Include="recursive\RecursiveBinaryChop.cs" />
     <Compile Include="specs\AnotherIterativeBinaryChopSpecs.cs" />
     <Compile Include="specs\BinaryChopTestSetup.cs" />
-    <Compile Include="specs\DecoratorBinaryChopSpecs.cs" />
+    <Compile Include="specs\LazySingleChopSpecs.cs" />
     <Compile Include="specs\IterativeBinaryChopSpecs.cs" />
     <Compile Include="specs\RecursiveBinaryChopSpecs.cs" />
     <Compile Include="specs\SpecExtensions.cs" />
