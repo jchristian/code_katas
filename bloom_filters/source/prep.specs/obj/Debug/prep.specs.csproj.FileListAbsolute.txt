@@ -1,0 +1,5 @@
+E:\dev\code_katas\bloom_filters\artifacts\prep.specs.dll
+E:\dev\code_katas\bloom_filters\artifacts\prep.specs.pdb
+E:\dev\code_katas\bloom_filters\source\prep.specs\obj\Debug\ResolveAssemblyReference.cache
+E:\dev\code_katas\bloom_filters\source\prep.specs\obj\Debug\prep.specs.dll
+E:\dev\code_katas\bloom_filters\source\prep.specs\obj\Debug\prep.specs.pdb
