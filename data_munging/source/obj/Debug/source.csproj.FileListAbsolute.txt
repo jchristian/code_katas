@@ -1,0 +1,16 @@
+C:\Dev\code_katas\data_munging\source\bin\Debug\source.dll
+C:\Dev\code_katas\data_munging\source\bin\Debug\source.pdb
+C:\Dev\code_katas\data_munging\source\bin\Debug\developwithpassion.specifications.dll
+C:\Dev\code_katas\data_munging\source\bin\Debug\developwithpassion.specifications.moq.dll
+C:\Dev\code_katas\data_munging\source\bin\Debug\Machine.Fakes.Adapters.Moq.dll
+C:\Dev\code_katas\data_munging\source\bin\Debug\Machine.Fakes.dll
+C:\Dev\code_katas\data_munging\source\bin\Debug\Machine.Specifications.dll
+C:\Dev\code_katas\data_munging\source\bin\Debug\Moq.dll
+C:\Dev\code_katas\data_munging\source\bin\Debug\developwithpassion.specifications.pdb
+C:\Dev\code_katas\data_munging\source\bin\Debug\developwithpassion.specifications.moq.pdb
+C:\Dev\code_katas\data_munging\source\bin\Debug\Moq.pdb
+C:\Dev\code_katas\data_munging\source\bin\Debug\Moq.xml
+C:\Dev\code_katas\data_munging\source\obj\Debug\source.csprojResolveAssemblyReference.cache
+C:\Dev\code_katas\data_munging\source\obj\Debug\source.dll
+C:\Dev\code_katas\data_munging\source\obj\Debug\source.pdb
+C:\Dev\code_katas\data_munging\source\bin\Debug\MoreLinq.dll
