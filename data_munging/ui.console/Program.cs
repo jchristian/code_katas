@@ -1,6 +1,5 @@
 ﻿using System;
 using source;
-using StructureMap;
 
 namespace ui.console
 {
@@ -8,9 +7,10 @@ namespace ui.console
     {
         static void Main(string[] args)
         {
-            var query = ObjectFactory.GetInstance<GetTheSmallestTempuratureSpread>();
+            var query = new GetTheSmallestTempuratureSpread(new WeatherInformationRepository());
 
             Console.WriteLine(string.Format("The smallest tempurature spread was for June {0}", query.Fetch()));
+            Console.ReadLine();
         }
     }
 }

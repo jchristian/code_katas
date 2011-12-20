@@ -5,12 +5,12 @@ using Machine.Specifications;
 
 namespace source.specs
 {
-    public class WeatherProviderSpecs
+    public class GetTheSmallestTempuratureSpreadSpecs
     {
         public abstract class concern : Observes<IFetchWeatherInformation<int>,
                                             GetTheSmallestTempuratureSpread> {}
 
-        [Subject(typeof(WeatherProviderSpecs))]
+        [Subject(typeof(GetTheSmallestTempuratureSpreadSpecs))]
         public class when_getting_the_day_of_the_smallest_tempurature_spread : concern
         {
             static int the_returned_day;

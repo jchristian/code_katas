@@ -61,14 +61,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DailyWeatherInformation.cs" />
     <Compile Include="GetTheSmallestTempuratureSpread.cs" />
     <Compile Include="IFetchWeatherInformation.cs" />
     <Compile Include="IGetWeatherInformation.cs" />
     <Compile Include="IProvideDailyWeatherInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="specs\WeatherProviderSpecs.cs" />
+    <Compile Include="specs\GetTheSmallestTempuratureSpreadSpecs.cs" />
+    <Compile Include="specs\WeatherInformationRepositorySpecs.cs" />
+    <Compile Include="WeatherInformationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\weather.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

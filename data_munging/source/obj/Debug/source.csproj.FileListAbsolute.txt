@@ -14,3 +14,4 @@ C:\Dev\code_katas\data_munging\source\obj\Debug\source.csprojResolveAssemblyRefe
 C:\Dev\code_katas\data_munging\source\obj\Debug\source.dll
 C:\Dev\code_katas\data_munging\source\obj\Debug\source.pdb
 C:\Dev\code_katas\data_munging\source\bin\Debug\MoreLinq.dll
+C:\Dev\code_katas\data_munging\source\bin\Debug\data\weather.dat
