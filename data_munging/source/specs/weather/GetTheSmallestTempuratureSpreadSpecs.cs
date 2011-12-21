@@ -1,13 +1,14 @@
-using System.Linq;
+﻿using System.Linq;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.moq;
 using Machine.Specifications;
+using source.weather;
 
-namespace source.specs
+namespace source.specs.weather
 {
     public class GetTheSmallestTempuratureSpreadSpecs
     {
-        public abstract class concern : Observes<IFetchWeatherInformation<int>,
+        public abstract class concern : Observes<IFetchInformation<int>,
                                             GetTheSmallestTempuratureSpread> {}
 
         [Subject(typeof(GetTheSmallestTempuratureSpreadSpecs))]

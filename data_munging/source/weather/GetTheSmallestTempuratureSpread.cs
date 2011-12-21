@@ -1,9 +1,8 @@
 ﻿using MoreLinq;
-using source.specs;
 
-namespace source
+namespace source.weather
 {
-    public class GetTheSmallestTempuratureSpread : IFetchWeatherInformation<int>
+    public class GetTheSmallestTempuratureSpread : IFetchInformation<int>
     {
         IGetWeatherInformation _weatherRepository;
 

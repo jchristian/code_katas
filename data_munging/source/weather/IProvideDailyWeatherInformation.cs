@@ -1,4 +1,4 @@
-﻿namespace source
+﻿namespace source.weather
 {
     public interface IProvideDailyWeatherInformation
     {

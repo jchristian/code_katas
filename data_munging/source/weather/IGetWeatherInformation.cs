@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace source
+namespace source.weather
 {
     public interface IGetWeatherInformation
     {

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using Machine.Specifications.Utility;
 
-namespace source
+namespace source.weather
 {
     public class WeatherInformationRepository : IGetWeatherInformation
     {

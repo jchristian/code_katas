@@ -21,3 +21,4 @@ C:\Dev\code_katas\data_munging\ui.console\bin\Debug\Moq.xml
 C:\Dev\code_katas\data_munging\ui.console\obj\x86\Debug\ui.console.exe
 C:\Dev\code_katas\data_munging\ui.console\obj\x86\Debug\ui.console.pdb
 C:\Dev\code_katas\data_munging\ui.console\bin\Debug\data\weather.dat
+C:\Dev\code_katas\data_munging\ui.console\bin\Debug\data\football.dat

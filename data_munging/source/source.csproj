@@ -61,22 +61,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DailyWeatherInformation.cs" />
-    <Compile Include="GetTheSmallestTempuratureSpread.cs" />
-    <Compile Include="IFetchWeatherInformation.cs" />
-    <Compile Include="IGetWeatherInformation.cs" />
-    <Compile Include="IProvideDailyWeatherInformation.cs" />
+    <Compile Include="football\FootballInformationRepository.cs" />
+    <Compile Include="football\GetTheTeamWithTheSmallestPointSpread.cs" />
+    <Compile Include="football\IGetFootballInformation.cs" />
+    <Compile Include="football\IProvideTeamInformation.cs" />
+    <Compile Include="football\Team.cs" />
+    <Compile Include="IFetchInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="specs\GetTheSmallestTempuratureSpreadSpecs.cs" />
-    <Compile Include="specs\WeatherInformationRepositorySpecs.cs" />
-    <Compile Include="WeatherInformationRepository.cs" />
+    <Compile Include="specs\football\GetTheTeamWithTheSmallestPointSpreadSpecs.cs" />
+    <Compile Include="specs\weather\GetTheSmallestTempuratureSpreadSpecs.cs" />
+    <Compile Include="weather\DailyWeatherInformation.cs" />
+    <Compile Include="weather\GetTheSmallestTempuratureSpread.cs" />
+    <Compile Include="weather\IGetWeatherInformation.cs" />
+    <Compile Include="weather\IProvideDailyWeatherInformation.cs" />
+    <Compile Include="weather\WeatherInformationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\football.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="data\weather.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

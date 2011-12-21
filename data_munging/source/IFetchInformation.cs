@@ -1,6 +1,6 @@
 ﻿namespace source
 {
-    public interface IFetchWeatherInformation<Type>
+    public interface IFetchInformation<Type>
     {
         Type Fetch();
     }

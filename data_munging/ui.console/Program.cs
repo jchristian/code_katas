@@ -1,5 +1,6 @@
 ﻿using System;
-using source;
+using source.football;
+using source.weather;
 
 namespace ui.console
 {
@@ -7,9 +8,11 @@ namespace ui.console
     {
         static void Main(string[] args)
         {
-            var query = new GetTheSmallestTempuratureSpread(new WeatherInformationRepository());
+            var weatherQuery = new GetTheSmallestTempuratureSpread(new WeatherInformationRepository());
+            var footballQuery = new GetTheTeamWithTheSmallestPointSpread(new FootballInformationRepository());
 
-            Console.WriteLine(string.Format("The smallest tempurature spread was for June {0}", query.Fetch()));
+            Console.WriteLine(string.Format("The smallest tempurature spread was for June {0}", weatherQuery.Fetch()));
+            Console.WriteLine(string.Format("The team with the smallest point spread was {0}", footballQuery.Fetch().Name));
             Console.ReadLine();
         }
     }

@@ -1,4 +1,6 @@
-﻿namespace source
+﻿using System;
+
+namespace source.weather
 {
     public class DailyWeatherInformation : IProvideDailyWeatherInformation
     {
@@ -16,7 +18,7 @@
 
         public decimal GetTheTempuratureSpread()
         {
-            return _maximumTempurature - _minimumTempurature;
+            return Math.Abs(_maximumTempurature - _minimumTempurature);
         }
     }
 }
