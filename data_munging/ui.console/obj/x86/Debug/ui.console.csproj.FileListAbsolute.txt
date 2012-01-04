@@ -1,4 +1,3 @@
-C:\Dev\code_katas\data_munging\ui.console\obj\x86\Debug\ui.console.csprojResolveAssemblyReference.cache
 C:\Dev\code_katas\data_munging\ui.console\bin\Debug\ui.console.exe.config
 C:\Dev\code_katas\data_munging\ui.console\bin\Debug\ui.console.exe
 C:\Dev\code_katas\data_munging\ui.console\bin\Debug\ui.console.pdb
@@ -22,3 +21,4 @@ C:\Dev\code_katas\data_munging\ui.console\obj\x86\Debug\ui.console.exe
 C:\Dev\code_katas\data_munging\ui.console\obj\x86\Debug\ui.console.pdb
 C:\Dev\code_katas\data_munging\ui.console\bin\Debug\data\weather.dat
 C:\Dev\code_katas\data_munging\ui.console\bin\Debug\data\football.dat
+C:\dev\code_katas\data_munging\ui.console\obj\x86\Debug\ResolveAssemblyReference.cache

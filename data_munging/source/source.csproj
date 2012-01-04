@@ -52,6 +52,9 @@
     <Reference Include="MoreLinq">
       <HintPath>..\packages\morelinq.1.0\lib\net35\MoreLinq.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.3\lib\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -61,6 +64,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="file_parser\CreateFileStreams.cs" />
+    <Compile Include="file_parser\FileInformationProvider.cs" />
+    <Compile Include="file_parser\IBuildMaps.cs" />
+    <Compile Include="file_parser\ICreateFileStreams.cs" />
+    <Compile Include="file_parser\ICreateMappers.cs" />
+    <Compile Include="file_parser\IFetchProperties.cs" />
+    <Compile Include="file_parser\IFetchRows.cs" />
+    <Compile Include="file_parser\IGetInformation.cs" />
+    <Compile Include="file_parser\IMapStreamsToObjects.cs" />
+    <Compile Include="file_parser\IProvideARowOfInformation.cs" />
+    <Compile Include="file_parser\IProvideFileInformation.cs" />
+    <Compile Include="file_parser\Map.cs" />
+    <Compile Include="file_parser\MapFactory.cs" />
+    <Compile Include="file_parser\MapStreamsToObjects.cs" />
+    <Compile Include="file_parser\TextFileParser.cs" />
     <Compile Include="football\FootballInformationRepository.cs" />
     <Compile Include="football\GetTheTeamWithTheSmallestPointSpread.cs" />
     <Compile Include="football\IGetFootballInformation.cs" />

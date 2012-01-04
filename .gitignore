@@ -1,6 +1,6 @@
 empty.cs
-source/*/obj
-source/*/bin
+*/obj
+*/bin
 *.chm
 _[Rr]e[Ss]harper.*
 *.csproj.user

@@ -10,9 +10,9 @@ C:\Dev\code_katas\data_munging\source\bin\Debug\developwithpassion.specification
 C:\Dev\code_katas\data_munging\source\bin\Debug\developwithpassion.specifications.moq.pdb
 C:\Dev\code_katas\data_munging\source\bin\Debug\Moq.pdb
 C:\Dev\code_katas\data_munging\source\bin\Debug\Moq.xml
-C:\Dev\code_katas\data_munging\source\obj\Debug\source.csprojResolveAssemblyReference.cache
 C:\Dev\code_katas\data_munging\source\obj\Debug\source.dll
 C:\Dev\code_katas\data_munging\source\obj\Debug\source.pdb
 C:\Dev\code_katas\data_munging\source\bin\Debug\MoreLinq.dll
 C:\Dev\code_katas\data_munging\source\bin\Debug\data\weather.dat
 C:\Dev\code_katas\data_munging\source\bin\Debug\data\football.dat
+C:\dev\code_katas\data_munging\source\obj\Debug\ResolveAssemblyReference.cache
