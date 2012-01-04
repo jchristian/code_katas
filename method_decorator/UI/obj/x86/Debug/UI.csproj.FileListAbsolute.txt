@@ -1,0 +1,9 @@
+C:\Dev\method_decorator\UI\bin\Debug\UI.exe
+C:\Dev\method_decorator\UI\bin\Debug\UI.pdb
+C:\Dev\method_decorator\UI\obj\x86\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Dev\method_decorator\UI\obj\x86\Debug\UI.Properties.Resources.resources
+C:\Dev\method_decorator\UI\obj\x86\Debug\UI.Views.ChatView.resources
+C:\Dev\method_decorator\UI\obj\x86\Debug\UI.csproj.GenerateResource.Cache
+C:\Dev\method_decorator\UI\obj\x86\Debug\UI.exe.licenses
+C:\Dev\method_decorator\UI\obj\x86\Debug\UI.exe
+C:\Dev\method_decorator\UI\obj\x86\Debug\UI.pdb
