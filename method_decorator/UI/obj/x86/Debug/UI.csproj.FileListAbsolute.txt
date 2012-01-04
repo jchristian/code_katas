@@ -7,3 +7,5 @@ C:\Dev\method_decorator\UI\obj\x86\Debug\UI.csproj.GenerateResource.Cache
 C:\Dev\method_decorator\UI\obj\x86\Debug\UI.exe.licenses
 C:\Dev\method_decorator\UI\obj\x86\Debug\UI.exe
 C:\Dev\method_decorator\UI\obj\x86\Debug\UI.pdb
+C:\Dev\code_katas\method_decorator\UI\obj\x86\Debug\UI.exe
+C:\Dev\code_katas\method_decorator\UI\obj\x86\Debug\UI.pdb
