@@ -11,7 +11,8 @@
     <RootNamespace>UI</RootNamespace>
     <AssemblyName>UI</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -34,9 +35,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="developwithpassion.specifications">
+      <HintPath>..\packages\developwithpassion.specifications.moq.0.4.24.3\lib\developwithpassion.specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="developwithpassion.specifications.moq">
+      <HintPath>..\packages\developwithpassion.specifications.moq.0.4.24.3\lib\developwithpassion.specifications.moq.dll</HintPath>
+    </Reference>
     <Reference Include="Infragistics2.Shared.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics2.Win.Misc.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics2.Win.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\packages\Machine.Fakes.0.2.8\lib\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.Moq">
+      <HintPath>..\packages\Machine.Fakes.Moq.0.2.8\lib\Machine.Fakes.Adapters.Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\packages\Machine.Specifications.0.4.24.0\lib\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.3\lib\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
@@ -51,10 +73,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommunicationProxy.cs" />
+    <Compile Include="Core\DecoratorBuilder.cs" />
+    <Compile Include="Core\Delegates.cs" />
+    <Compile Include="Core\IBuildADecorator.cs" />
+    <Compile Include="Core\IBuildClasses.cs" />
+    <Compile Include="Core\ICreateDelegates.cs" />
+    <Compile Include="Core\ISubstituteAMethod.cs" />
+    <Compile Include="Core\IWrapAnExpression.cs" />
+    <Compile Include="Core\ObjectExtensions.cs" />
     <Compile Include="ICommunicateWithAnotherUser.cs" />
     <Compile Include="Presenters\ChatPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specs\Core\DecoratorBuilderSpecs.cs" />
     <Compile Include="Views\ChatView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,10 +102,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\ChatView.resx">
       <DependentUpon>ChatView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
