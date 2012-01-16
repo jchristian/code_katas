@@ -10,7 +10,7 @@ namespace UI.Views
             get { return this; }
         }
 
-        public ChatView()
+        public ChatView(int a)
         {
             InitializeComponent();
         }

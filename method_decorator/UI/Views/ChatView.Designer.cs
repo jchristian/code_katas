@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.uxChatBox = new System.Windows.Forms.TextBox();
-            this.uxDialogLabel = new Infragistics.Win.Misc.UltraLabel();
+            this.uxDialogLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uxChatBox
@@ -49,7 +49,6 @@
             this.uxDialogLabel.Size = new System.Drawing.Size(276, 162);
             this.uxDialogLabel.TabIndex = 1;
             this.uxDialogLabel.Text = "Dialog";
-            this.uxDialogLabel.TextRenderingMode = Infragistics.Win.TextRenderingMode.GDI;
             // 
             // Chat
             // 
@@ -68,6 +67,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox uxChatBox;
-        private Infragistics.Win.Misc.UltraLabel uxDialogLabel;
+        private System.Windows.Forms.Label uxDialogLabel;
     }
 }

@@ -41,9 +41,6 @@
     <Reference Include="developwithpassion.specifications.moq">
       <HintPath>..\packages\developwithpassion.specifications.moq.0.4.24.3\lib\developwithpassion.specifications.moq.dll</HintPath>
     </Reference>
-    <Reference Include="Infragistics2.Shared.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
-    <Reference Include="Infragistics2.Win.Misc.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics2.Win.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Machine.Fakes">
       <HintPath>..\packages\Machine.Fakes.0.2.8\lib\Machine.Fakes.dll</HintPath>
     </Reference>
@@ -74,18 +71,26 @@
   <ItemGroup>
     <Compile Include="CommunicationProxy.cs" />
     <Compile Include="Core\DecoratorBuilder.cs" />
+    <Compile Include="Core\ClassBuilderFactory.cs" />
+    <Compile Include="Core\ReflectionClassBuilder.cs" />
     <Compile Include="Core\Delegates.cs" />
+    <Compile Include="Core\IBuildAClass.cs" />
     <Compile Include="Core\IBuildADecorator.cs" />
-    <Compile Include="Core\IBuildClasses.cs" />
+    <Compile Include="Core\ICreateAClass.cs" />
     <Compile Include="Core\ICreateDelegates.cs" />
+    <Compile Include="Core\ICreateObjects.cs" />
     <Compile Include="Core\ISubstituteAMethod.cs" />
     <Compile Include="Core\IWrapAnExpression.cs" />
     <Compile Include="Core\ObjectExtensions.cs" />
+    <Compile Include="Core\WrappedExpression.cs" />
     <Compile Include="ICommunicateWithAnotherUser.cs" />
     <Compile Include="Presenters\ChatPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specs\Core\ClassBuilderFactorySpecs.cs" />
+    <Compile Include="Specs\Core\ClassBuilderSpecs.cs" />
     <Compile Include="Specs\Core\DecoratorBuilderSpecs.cs" />
+    <Compile Include="Specs\Core\MethodSubstitutionClassBuilderSpecs.cs" />
     <Compile Include="Views\ChatView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,7 +98,6 @@
       <DependentUpon>ChatView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\IDisplayChatDialog.cs" />
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

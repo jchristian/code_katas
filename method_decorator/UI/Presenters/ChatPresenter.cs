@@ -13,14 +13,14 @@ namespace UI.Presenters
             communication.MessageReceived += Receive;
         }
 
-        public void Send(string message)
-        {
-            TheView.AddMessage(message, "You");
-        }
-
         public void Receive(string message, string user)
         {
             TheView.AddMessage(message, user);
+        }
+
+        public void Send(string message)
+        {
+            TheView.AddMessage(message, "You");
         }
     }
 }

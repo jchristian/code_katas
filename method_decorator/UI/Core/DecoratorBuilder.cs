@@ -1,28 +1,27 @@
 ﻿using System;
-using UI.Specs.Core;
 
 namespace UI.Core
 {
     public class DecoratorBuilder<T> : IBuildADecorator<T>
     {
-        T _instance;
-        IWrapAnExpression<Action<T>> _methodToDecorate;
-        IBuildClasses _classBuilder;
-        ICreateDelegates _delegateFactory;
+        T the_object_to_decorate;
+        IWrapAnExpression<Action<T>> the_method_to_decorate;
+        ICreateAClass class_builder;
+        ICreateDelegates delegate_factory;
 
-        public DecoratorBuilder(T instance, IWrapAnExpression<Action<T>> methodToDecorate, IBuildClasses classBuilder, ICreateDelegates delegateFactory)
+        public DecoratorBuilder(T theObjectToDecorate, IWrapAnExpression<Action<T>> theMethodToDecorate, ICreateAClass classBuilder, ICreateDelegates delegateFactory)
         {
-            _instance = instance;
-            _methodToDecorate = methodToDecorate;
-            _delegateFactory = delegateFactory;
-            _classBuilder = classBuilder;
+            the_object_to_decorate = theObjectToDecorate;
+            the_method_to_decorate = theMethodToDecorate;
+            delegate_factory = delegateFactory;
+            class_builder = classBuilder;
         }
 
         public T With(Action<T> decoration)
         {
-            return _classBuilder.Build(_instance)
-                .Substituting(_methodToDecorate)
-                .With(_delegateFactory.Combine(decoration, _methodToDecorate.Compile()));
+            return class_builder.Create(the_object_to_decorate)
+                .Substituting(the_method_to_decorate)
+                .With(delegate_factory.Combine(decoration, the_method_to_decorate.Compile()));
         }
     }
 }

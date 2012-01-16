@@ -4,6 +4,6 @@ namespace UI.Core
 {
     public interface ISubstituteAMethod<T>
     {
-        T With(Action<T> method);
+        T With(Action<T> the_substitution);
     }
 }

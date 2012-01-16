@@ -16,22 +16,22 @@ namespace UI.Specs.Core
         {
             Establish c = () =>
             {
-                decoration = new Action<ITest>(x => { });
+                decoration = x => { };
                 the_returned_decorator = fake.an<ITest>();
                 var the_decorated_method = new Action<ITest>(x => { });
                 var the_compiled_method = new Action<ITest>(x => { });
-                var generic_class_builder = fake.an<IBuildClasses<ITest>>();
+                var generic_class_builder = fake.an<IBuildAClass<ITest>>();
                 var method_substitutor = fake.an<ISubstituteAMethod<ITest>>();
 
                 var the_instance = depends.on<ITest>();
                 var the_method_to_decorate = depends.on<IWrapAnExpression<Action<ITest>>>();
-                var class_builder = depends.on<IBuildClasses>();
+                var class_builder = depends.on<ICreateAClass>();
                 var delegate_factory = depends.on<ICreateDelegates>();
 
-                class_builder.setup(x => x.Build(the_instance)).Return(generic_class_builder);
+                class_builder.setup(x => x.Create(the_instance)).Return(generic_class_builder);
                 generic_class_builder.setup(x => x.Substituting(the_method_to_decorate)).Return(method_substitutor);
                 method_substitutor.setup(x => x.With(the_decorated_method)).Return(the_decorator);
-                delegate_factory.setup(x => x.Combine(decoration, the_method_to_decorate.Compile())).Return(the_decorated_method);
+                delegate_factory.setup(x => x.Combine(decoration, the_compiled_method)).Return(the_decorated_method);
                 the_method_to_decorate.setup(x => x.Compile()).Return(the_compiled_method);
             };
 
