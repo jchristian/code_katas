@@ -1,0 +1,5 @@
+C:\dev\code_katas\duck_typing\UI\bin\Debug\UI.exe
+C:\dev\code_katas\duck_typing\UI\bin\Debug\UI.pdb
+C:\dev\code_katas\duck_typing\UI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\dev\code_katas\duck_typing\UI\obj\x86\Debug\UI.exe
+C:\dev\code_katas\duck_typing\UI\obj\x86\Debug\UI.pdb
