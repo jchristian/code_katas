@@ -1,0 +1,12 @@
+C:\Dev\code_katas\patterns\abstract_factory\UI\bin\Debug\UI.exe
+C:\Dev\code_katas\patterns\abstract_factory\UI\bin\Debug\UI.pdb
+C:\Dev\code_katas\patterns\abstract_factory\UI\obj\x86\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Dev\code_katas\patterns\abstract_factory\UI\obj\x86\Debug\MainWindow.baml
+C:\Dev\code_katas\patterns\abstract_factory\UI\obj\x86\Debug\MainWindow.g.cs
+C:\Dev\code_katas\patterns\abstract_factory\UI\obj\x86\Debug\App.g.cs
+C:\Dev\code_katas\patterns\abstract_factory\UI\obj\x86\Debug\UI_MarkupCompile.cache
+C:\Dev\code_katas\patterns\abstract_factory\UI\obj\x86\Debug\UI.g.resources
+C:\Dev\code_katas\patterns\abstract_factory\UI\obj\x86\Debug\UI.Properties.Resources.resources
+C:\Dev\code_katas\patterns\abstract_factory\UI\obj\x86\Debug\UI.csproj.GenerateResource.Cache
+C:\Dev\code_katas\patterns\abstract_factory\UI\obj\x86\Debug\UI.exe
+C:\Dev\code_katas\patterns\abstract_factory\UI\obj\x86\Debug\UI.pdb
