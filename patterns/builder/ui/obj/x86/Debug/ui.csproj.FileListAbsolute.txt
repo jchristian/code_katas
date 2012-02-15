@@ -1,0 +1,5 @@
+C:\Dev\code_katas\patterns\builder\ui\obj\x86\Debug\ui.csprojResolveAssemblyReference.cache
+C:\Dev\code_katas\patterns\builder\ui\bin\Debug\ui.exe
+C:\Dev\code_katas\patterns\builder\ui\bin\Debug\ui.pdb
+C:\Dev\code_katas\patterns\builder\ui\obj\x86\Debug\ui.exe
+C:\Dev\code_katas\patterns\builder\ui\obj\x86\Debug\ui.pdb
