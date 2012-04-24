@@ -1,0 +1,5 @@
+C:\Dev\code_katas\gravity_kata\src\console\obj\x86\Debug\console.csprojResolveAssemblyReference.cache
+C:\Dev\code_katas\gravity_kata\src\console\bin\Debug\console.exe
+C:\Dev\code_katas\gravity_kata\src\console\bin\Debug\console.pdb
+C:\Dev\code_katas\gravity_kata\src\console\obj\x86\Debug\console.exe
+C:\Dev\code_katas\gravity_kata\src\console\obj\x86\Debug\console.pdb
