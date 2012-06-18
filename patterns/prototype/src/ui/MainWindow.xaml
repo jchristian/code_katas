@@ -1,0 +1,18 @@
+﻿<Window x:Class="ui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="500" Width="700">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="23" />
+        </Grid.RowDefinitions>
+        <Canvas Name="canvas" Grid.Row="0" Background="Transparent" />
+        <WrapPanel Name="tool_bar_panel" Grid.Row="1">
+            <Button Name="copy_button">Copy</Button>
+        </WrapPanel>
+    </Grid>
+</Window>

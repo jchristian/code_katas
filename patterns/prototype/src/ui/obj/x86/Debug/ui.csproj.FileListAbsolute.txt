@@ -1,0 +1,12 @@
+C:\Dev\code_katas\patterns\prototype\src\ui\bin\Debug\ui.exe
+C:\Dev\code_katas\patterns\prototype\src\ui\bin\Debug\ui.pdb
+C:\Dev\code_katas\patterns\prototype\src\ui\obj\x86\Debug\ui.csprojResolveAssemblyReference.cache
+C:\Dev\code_katas\patterns\prototype\src\ui\obj\x86\Debug\MainWindow.baml
+C:\Dev\code_katas\patterns\prototype\src\ui\obj\x86\Debug\MainWindow.g.cs
+C:\Dev\code_katas\patterns\prototype\src\ui\obj\x86\Debug\App.g.cs
+C:\Dev\code_katas\patterns\prototype\src\ui\obj\x86\Debug\ui_MarkupCompile.cache
+C:\Dev\code_katas\patterns\prototype\src\ui\obj\x86\Debug\ui.g.resources
+C:\Dev\code_katas\patterns\prototype\src\ui\obj\x86\Debug\ui.Properties.Resources.resources
+C:\Dev\code_katas\patterns\prototype\src\ui\obj\x86\Debug\ui.csproj.GenerateResource.Cache
+C:\Dev\code_katas\patterns\prototype\src\ui\obj\x86\Debug\ui.exe
+C:\Dev\code_katas\patterns\prototype\src\ui\obj\x86\Debug\ui.pdb
