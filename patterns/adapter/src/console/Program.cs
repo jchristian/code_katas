@@ -12,7 +12,8 @@ namespace console
             
             Console.WriteLine("Do you want to:");
             Console.WriteLine("1) Add");
-            Console.WriteLine("2) Subtract");
+            Console.WriteLine("2) Composition Based Subtract");
+            Console.WriteLine("3) Inheritance Based Subtract");
             Console.WriteLine("Q) Quit");
 
             while((input = Console.ReadLine().ToLower()) != "q")
@@ -31,6 +32,12 @@ namespace console
                         Console.WriteLine();
                         Console.WriteLine("The result is: {0}", new Calculator().Operate(new ReversedOrderToInOrder(new ReversedSubtract()), subtract_arguments));
                         break;
+                    case "3":
+                        Console.WriteLine("Enter the values you want to subtract...");
+                        var class_based_subtract_arguments = Console.ReadLine().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(x => Decimal.Parse(x)).ToArray();
+                        Console.WriteLine();
+                        Console.WriteLine("The result is: {0}", new Calculator().Operate(new ClassBasedSubtract(), class_based_subtract_arguments));
+                        break;
                     case "q":
                         break;
                     default:
@@ -41,6 +48,7 @@ namespace console
                 Console.WriteLine("Do you want to:");
                 Console.WriteLine("1) Add");
                 Console.WriteLine("2) Subtract");
+                Console.WriteLine("3) Inheritance Based Subtract");
                 Console.WriteLine("Q) Quit");
             }
         }
@@ -99,6 +107,14 @@ namespace console
         public decimal evaluate(decimal[] arguments)
         {
             return operation.evaluate(arguments.Reverse().ToArray());
+        }
+    }
+
+    public class ClassBasedSubtract : ReversedSubtract, IOperateInOrder
+    {
+        public decimal evaluate(decimal[] arguments)
+        {
+            return base.evaluate(arguments.Reverse().ToArray());
         }
     }
 }
