@@ -1,0 +1,12 @@
+C:\dev\practice\patterns\bridge\src\ui\bin\Debug\ui.exe
+C:\dev\practice\patterns\bridge\src\ui\bin\Debug\ui.pdb
+C:\dev\practice\patterns\bridge\src\ui\obj\x86\Debug\ui.csprojResolveAssemblyReference.cache
+C:\dev\practice\patterns\bridge\src\ui\obj\x86\Debug\MainWindow.baml
+C:\dev\practice\patterns\bridge\src\ui\obj\x86\Debug\MainWindow.g.cs
+C:\dev\practice\patterns\bridge\src\ui\obj\x86\Debug\App.g.cs
+C:\dev\practice\patterns\bridge\src\ui\obj\x86\Debug\ui_MarkupCompile.cache
+C:\dev\practice\patterns\bridge\src\ui\obj\x86\Debug\ui.g.resources
+C:\dev\practice\patterns\bridge\src\ui\obj\x86\Debug\ui.Properties.Resources.resources
+C:\dev\practice\patterns\bridge\src\ui\obj\x86\Debug\ui.csproj.GenerateResource.Cache
+C:\dev\practice\patterns\bridge\src\ui\obj\x86\Debug\ui.exe
+C:\dev\practice\patterns\bridge\src\ui\obj\x86\Debug\ui.pdb
