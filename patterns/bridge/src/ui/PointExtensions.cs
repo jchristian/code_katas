@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Windows;
 
-namespace ui.without_bridge
+namespace ui
 {
     public static class PointExtensions
     {

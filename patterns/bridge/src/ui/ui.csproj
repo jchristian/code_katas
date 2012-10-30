@@ -55,8 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="without_bridge\Grapher.cs" />
-    <Compile Include="without_bridge\PointExtensions.cs" />
+    <Compile Include="IGraph.cs" />
+    <Compile Include="PointExtensions.cs" />
+    <Compile Include="without_bridge\CartesianConsoleGrapher.cs" />
+    <Compile Include="without_bridge\CartesianGuiGrapher.cs" />
+    <Compile Include="without_bridge\GuiGrapher.cs" />
+    <Compile Include="without_bridge\PolarConsoleGrapher.cs" />
+    <Compile Include="without_bridge\PolarGuiGrapher.cs" />
+    <Compile Include="without_bridge\SkewGrapher.cs" />
+    <Compile Include="with_bridge\CartesianGrapher.cs" />
+    <Compile Include="with_bridge\ConsolePlotter.cs" />
+    <Compile Include="with_bridge\GuiPlotter.cs" />
+    <Compile Include="with_bridge\IPlot.cs" />
+    <Compile Include="with_bridge\PolarGrapher.cs" />
+    <Compile Include="with_bridge\SkewPlotter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,9 +106,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="with_bridge\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

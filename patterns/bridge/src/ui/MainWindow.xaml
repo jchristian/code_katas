@@ -12,6 +12,8 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Canvas Name="without_cartesian" Width="250" Height="250"/>
-        <Canvas Name="without_polar" Grid.Column="1"  Width="250" Height="250" />
+        <Canvas Name="without_polar" Grid.Column="1" Width="250" Height="250" />
+        <Canvas Name="with_cartesian" Grid.Row="1"  Width="250" Height="250"/>
+        <Canvas Name="with_polar" Grid.Row="1" Grid.Column="1" Width="250" Height="250" />
     </Grid>
 </Window>
