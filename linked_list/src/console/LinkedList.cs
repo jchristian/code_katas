@@ -7,11 +7,10 @@ namespace console
     public class LinkedList<T> : IList<T>
     {
         Node<T> head;
-        Node<T> tail; 
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new System.NotImplementedException();
+            return new Enumerator(this);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -22,36 +21,38 @@ namespace console
         public void Add(T item)
         {
             if (head == null)
-            {
                 head = new Node<T>(item);
-                tail = head;
-            }
             else
-            {
-                var old_tail = tail;
-                tail = new Node<T>(item);
-                old_tail.Next = tail;
-            }
+                GetTail().Next = new Node<T>(item);
+
+            Count++;
         }
 
         public void Clear()
         {
-            throw new System.NotImplementedException();
+            head = null;
+            Count = 0;
         }
 
         public bool Contains(T item)
         {
-            throw new System.NotImplementedException();
+            return IndexOf(item) != -1;
         }
 
         public void CopyTo(T[] array, int arrayIndex)
         {
-            throw new System.NotImplementedException();
+            foreach (var item in array)
+                Insert(arrayIndex++, item);
         }
 
         public bool Remove(T item)
         {
-            throw new System.NotImplementedException();
+            if (!Contains(item))
+                return false;
+
+            RemoveAt(IndexOf(item));
+
+            return true;
         }
 
         public int Count { get; private set; }
@@ -59,7 +60,19 @@ namespace console
 
         public int IndexOf(T item)
         {
-            throw new System.NotImplementedException();
+            var currentNode = head;
+            var currentIndex = 0;
+            
+            while (currentNode != null)
+            {
+                if (currentNode.Value.Equals(item))
+                    return currentIndex;
+
+                currentNode = currentNode.Next;
+                currentIndex++;
+            }
+
+            return -1;
         }
 
         public void Insert(int index, T item)
@@ -67,11 +80,20 @@ namespace console
             var nodeAtPreviousIndex = ElementAt(index - 1);
             var newNodeAtIndex = new Node<T>(item, nodeAtPreviousIndex.Next);
             nodeAtPreviousIndex.Next = newNodeAtIndex;
+            Count++;
         }
 
         public void RemoveAt(int index)
         {
-            throw new System.NotImplementedException();
+            if (index == 0)
+                head = head.Next;
+            else
+            {
+                var nodeOfPreviousItem = ElementAt(index - 1);
+                nodeOfPreviousItem.Next = nodeOfPreviousItem.Next.Next;
+            }
+
+            Count--;
         }
 
         public T this[int index]
@@ -93,6 +115,11 @@ namespace console
             return node;
         }
 
+        Node<T> GetTail()
+        {
+            return ElementAt(Count - 1);
+        }
+
         class Node<T>
         {
             public T Value { get; set; }
@@ -103,6 +130,40 @@ namespace console
             {
                 Value = value;
                 Next = next;
+            }
+        }
+
+        public class Enumerator : IEnumerator<T>
+        {
+            LinkedList<T> list;
+            Node<T> currentNode;
+
+            public Enumerator(LinkedList<T> list)
+            {
+                this.list = list;
+            }
+
+            public void Dispose() { }
+
+            public bool MoveNext()
+            {
+                if (currentNode == null)
+                    currentNode = list.head;
+                else
+                    currentNode = currentNode.Next;
+
+                return currentNode != null;
+            }
+
+            public void Reset()
+            {
+                throw new NotImplementedException();
+            }
+
+            public T Current { get { return currentNode.Value; } }
+            object IEnumerator.Current
+            {
+                get { return Current; }
             }
         }
     }
