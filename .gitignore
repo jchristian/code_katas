@@ -1,8 +1,6 @@
 empty.cs
-*/obj
-*/bin
-*/obj/*
-*/bin/*
+obj/
+bin/
 *.chm
 _[Rr]e[Ss]harper.*
 *.csproj.user
@@ -24,9 +22,6 @@ git.yaml
 Gemfile.lock
 *mm_cache*
 db_dev.rb
-*/ChimneyCakes
-*/gilded_rose
-*/tetris_js
-*/ChimneyCakes/*
-*/gilded_rose/*
-*/tetris_js/*
+ChimneyCakes/
+gilded_rose/
+tetris_js/
