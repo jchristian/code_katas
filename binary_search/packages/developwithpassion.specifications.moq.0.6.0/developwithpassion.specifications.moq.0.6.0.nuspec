@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>developwithpassion.specifications.moq</id>
+    <version>0.6.0</version>
+    <title>developwithpassion.specifications.moq</title>
+    <authors>Develop With Passion®</authors>
+    <owners>Develop With Passion®</owners>
+    <licenseUrl>http://github.com/developwithpassion/developwithpassion.specifications/blob/master/License.txt</licenseUrl>
+    <projectUrl>http://github.com/developwithp/developwithpassion.specifications</projectUrl>
+    <iconUrl>http://github.com/developwithpassion/developwithpassion.specifications/raw/master/misc/developwithpassion.specifications.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Testing Extensions</description>
+    <summary>Context/Specification framework</summary>
+    <language>en-US</language>
+    <tags>test unit testing context specification bdd tdd</tags>
+    <dependencies>
+      <dependency id="Machine.Fakes" version="0.5.1" />
+      <dependency id="Machine.Fakes.Moq" version="0.5.1" />
+      <dependency id="Machine.Specifications" version="0.5.9" />
+      <dependency id="Moq" version="4.0.10827" />
+    </dependencies>
+    <references>
+      <reference file="developwithpassion.specifications.dll" />
+      <reference file="developwithpassion.specifications.moq.dll" />
+    </references>
+  </metadata>
+</package>
