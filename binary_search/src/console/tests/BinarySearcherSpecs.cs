@@ -6,9 +6,9 @@ namespace console.tests
 {
     public class BinarySearcherSpecs
     {
-        public abstract class concern : Observes<BinarySearcher> {}
+        public abstract class concern : Observes<RecursiveSearcher> {}
 
-        [Subject(typeof(BinarySearcher))]
+        [Subject(typeof(RecursiveSearcher))]
         public class when_searching_for_a_key : concern
         {
             public class and_the_list_is_empty

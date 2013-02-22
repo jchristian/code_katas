@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace console
 {
-    public class BinarySearcher
+    public class RecursiveSearcher
     {
         public virtual int Find(IEnumerable<int> list, int key)
         {
@@ -38,12 +38,12 @@ namespace console
 
         int FindLowerHalf(IEnumerable<int> list, int key, int index_of_first_element, int middle_index)
         {
-            return Find(list.Take(middle_index), key, index_of_first_element);
+            return Find(list.Take(middle_index).ToArray(), key, index_of_first_element);
         }
 
         int FindUpperHalf(IEnumerable<int> list, int key, int index_of_first_element, int middle_index)
         {
-            return Find(list.Skip(middle_index + 1), key, index_of_first_element + (middle_index + 1));
+            return Find(list.Skip(middle_index + 1).ToArray(), key, index_of_first_element + (middle_index + 1));
         }
     }
 }
