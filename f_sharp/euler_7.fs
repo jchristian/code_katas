@@ -1,20 +1,27 @@
+let time work =
+    let stopwatch = new System.Diagnostics.Stopwatch()
+    stopwatch.Start();
+    let result = work()
+    printfn "It took %A ms" stopwatch.ElapsedMilliseconds
+    result
+
 let rec last = function
     | hd :: [] -> hd
     | hd :: tl -> last tl
     | _ -> failwith "Empty list."
 
-let not x = x = false
-
+//Assumes an ordered list
 let rec is_x_divisible_by x = function
-    | list when (List.length list) = 0 -> false
+    | [] -> false
+    | list when list.Head > (bigint (System.Math.Sqrt (float x))) -> false
     | list when (x % list.Head) = 0I -> true
     | list -> is_x_divisible_by x list.Tail
 
 let get_nth_prime limit =
     let rec loop (primes : List<bigint>) n = function
         | cur when n > limit -> (last primes)
-        | cur when (not (is_x_divisible_by cur primes)) -> loop (primes @ [cur]) (n + 1I) (cur + 1I)
-        | cur -> loop primes n (cur + 1I)
+        | cur when is_x_divisible_by cur primes -> loop primes n (cur + 1I)
+        | cur -> loop (primes @ [cur]) (n + 1I) (cur + 1I)
     loop [] 1I 2I
 
 //Testing functions
@@ -38,5 +45,5 @@ run_test "is_x_divisible_by 121 [2; 3; 5; 7; 11]" true (is_x_divisible_by 121I [
 run_test "get_nth_prime 1" 2I (get_nth_prime 1I)
 run_test "get_nth_prime 6" 13I (get_nth_prime 6I)
 run_test "get_nth_prime 10" 29I (get_nth_prime 10I)
+run_test "get_nth_prime 10001" 104743I (time (fun() -> get_nth_prime 10001I))
 
-printfn "get_nth_prime 10001: %A" (get_nth_prime 10001I)
