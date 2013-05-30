@@ -1,10 +1,3 @@
-let filter predicate list =
-    let rec loop acc = function
-        | [] -> acc
-        | head :: tail ->
-            match predicate head with
-            | true -> loop (head :: acc) tail
-            | false -> loop acc tail
-    List.rev (loop [] list)
+let array = Array.init 20 (fun index_x -> Array.init 20 (fun index_y -> index_x * index_y))
 
-printfn "%A" (filter (fun x -> x % 2 = 0) [1 .. 10])
+printfn "%A" array.[4].[11]

@@ -46,4 +46,3 @@ run_test "get_nth_prime 1" 2I (get_nth_prime 1I)
 run_test "get_nth_prime 6" 13I (get_nth_prime 6I)
 run_test "get_nth_prime 10" 29I (get_nth_prime 10I)
 run_test "get_nth_prime 10001" 104743I (time (fun() -> get_nth_prime 10001I))
-
