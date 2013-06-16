@@ -1,8 +1,19 @@
-let pair list =
-    let rec loop acc = function
-        | list when (List.length list) = 0 -> acc
-        | head :: second :: tail -> loop ((head, second) :: acc) tail
-    List.rev (loop [] list)
+let memoize func =
+    let lookup_table = (new System.Collections.Generic.Dictionary<_,_>())
+    fun x ->
+        match (lookup_table.TryGetValue(x)) with
+        | (true, value) -> value
+        | _ ->
+            let result = func(x)
+            lookup_table.Add(x, result)
+            result
+
+let double x = x * 2
+let memoized_double = memoize double
+
+printfn "%A" (memoized_double 2)
+printfn "%A" (memoized_double 4)
+printfn "%A" (memoized_double 2)
 
 //Testing functions
 let pass_fail = function
@@ -11,8 +22,3 @@ let pass_fail = function
 
 let run_test description expected actual =
     printfn "%s - %s: Expected <%A> Actual <%A>" (pass_fail (expected = actual)) description expected actual
-
-run_test "pair []" [] (pair [])
-run_test "pair [1; 2]" [(1, 2)] (pair [1; 2])
-run_test "pair [1 .. 10]" [for x in 1 .. 5 do yield (x * 2 - 1, x * 2)] (pair [1 .. 10])
-run_test "pair ['a' .. 'f']" [('a', 'b'); ('c', 'd'); ('e', 'f'); ] (pair ['a' .. 'f'])
