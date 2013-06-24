@@ -1,19 +1,19 @@
-let memoize func =
-    let lookup_table = (new System.Collections.Generic.Dictionary<_,_>())
-    fun x ->
-        match (lookup_table.TryGetValue(x)) with
-        | (true, value) -> value
-        | _ ->
-            let result = func(x)
-            lookup_table.Add(x, result)
-            result
+let withSideEffects x =
+    x := "Side Effected"
 
-let double x = x * 2
-let memoized_double = memoize double
+let main() =
+    let msg = ref "Not Effected"
+    printfn "%A" !msg
 
-printfn "%A" (memoized_double 2)
-printfn "%A" (memoized_double 4)
-printfn "%A" (memoized_double 2)
+    let setMsg () =
+        msg := "set"
+    setMsg()
+    printfn "%A" !msg
+
+    withSideEffects msg
+    printfn "%A" !msg
+
+main()    
 
 //Testing functions
 let pass_fail = function
