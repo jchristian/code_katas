@@ -6,12 +6,12 @@ let recurring_cycle_size x =
     let rec loop acc = function
         | 0 -> 0
         | remainder ->
-            let current = (remainder * 10) / x
-            let next_remainder = (remainder * 10) % x
-            if acc |> List.exists (fun y -> y = current) then
-                acc |> List.findIndex (fun y -> y = current) |> (fun x -> x + 1)
+            if acc |> List.exists (fun y -> y = remainder) then
+                acc |> List.findIndex (fun y -> y = remainder) |> (fun x -> x + 1)
             else
-                loop (current :: acc) next_remainder
+                let current = (remainder * 10) / x
+                let next_remainder = (remainder * 10) % x
+                loop (remainder :: acc) next_remainder
     loop [] 1
 
 run_test "recurring_cycle_size 2" 0 (recurring_cycle_size 2)
