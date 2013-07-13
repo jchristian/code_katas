@@ -18,6 +18,27 @@ namespace Helpers.Math
             else
                 get_divisors x |> List.rev |> List.tail |> List.rev
 
+        let get_sieve_for_x_values x =
+            let rec sieve (list : List<bool>) = function
+                | n when n > (int (System.Math.Sqrt (float x))) -> list
+                | n ->
+                    match list.Item(n) with
+                    | true -> sieve (List.mapi (fun index value -> ((index % n <> 0) && value) || (index <= n && value)) list) (n + 1)
+                    | false -> sieve list (n + 1)
+            (sieve (List.init (x + 1) (fun x -> true)) 2).Tail.Tail
+
+        let get_primes_up_to x =
+            List.rev
+                (List.fold2
+                    (fun acc index value ->
+                        match value with
+                        | true -> index :: acc
+                        | false -> acc)
+                    []
+                    [2 .. x]
+                    (get_sieve_for_x_values x)
+                )
+
     module Tests =
         open Helpers.Testing
         open Core
@@ -44,3 +65,6 @@ namespace Helpers.Math
             run_test "get_proper_divisors 21" [1I; 3I; 7I] (get_proper_divisors 21I)
             run_test "get_proper_divisors 28" [1I; 2I; 4I; 7I; 14I] (get_proper_divisors 28I)
             run_test "get_proper_divisors 29" [1I] (get_proper_divisors 29I)
+
+            run_test "get_primes_up_to 10" [2; 3; 5; 7] (get_primes_up_to 10)
+            run_test "get_primes_up_to 19" [2; 3; 5; 7; 11; 13; 17; 19] (get_primes_up_to 19)
