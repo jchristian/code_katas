@@ -5,14 +5,14 @@ open Helpers.Math.Core
 let quadratic a b x = (x * x) + (a * x) + b
 
 printfn "Generating primes..."
-let primes = get_primes_up_to 100000
+let primes = new System.Collections.Generic.HashSet<int>(get_primes_up_to 100000)
 printfn "Finished generating primes..."
 
 let get_consecutive_primes a b =
     let rec loop x =
         match (x, quadratic a b x) with
-        | (x, quad) when primes |> List.exists (fun y -> quad = y) |> not -> x
-        | (x, quad) when primes |> List.exists (fun y -> quad = y) -> loop (x + 1)
+        | (x, quad) when (primes.Contains(quad)) |> not -> x
+        | (x, quad) when (primes.Contains(quad)) -> loop (x + 1)
     loop 0
 
 run_test "get_consecutive_primes 1 41" 40 (get_consecutive_primes 1 41)
