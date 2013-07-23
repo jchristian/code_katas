@@ -8,7 +8,6 @@ let spiral_diagonals x =
         | step -> loop (acc @ ([1 .. 4] |> List.map (fun y -> cur + (y * step)))) (cur + step * 4) (step + 2)
     loop [1] 1 2
 
-
 run_test "spiral_diagonals 3" [1; 3; 5; 7; 9] (spiral_diagonals 3)
 run_test "spiral_diagonals 5" [1; 3; 5; 7; 9; 13; 17; 21; 25] (spiral_diagonals 5)
 
