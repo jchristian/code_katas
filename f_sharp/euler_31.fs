@@ -17,7 +17,6 @@ run_test "number_of_ways_to_make 5 british_currency" 4 (number_of_ways_to_make 5
 run_test "number_of_ways_to_make 10 british_currency" 11 (number_of_ways_to_make 10 british_currency)
 
 let main =
-    time_and_save (fun() -> (memoize number_of_ways_to_make) 200 british_currency)
     time_and_save (fun() -> number_of_ways_to_make 200 british_currency)
 
 [<STAThread>]
