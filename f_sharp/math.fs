@@ -39,6 +39,16 @@ namespace Helpers.Math
                     (get_sieve_for_x_values x)
                 )
 
+        let memoize func =
+            let lookup_table = (new System.Collections.Generic.Dictionary<_,_>())
+            fun x ->
+                match (lookup_table.TryGetValue(x)) with
+                | (true, value) -> value
+                | _ ->
+                    let result = func(x)
+                    lookup_table.Add(x, result)
+                    result
+
     module Tests =
         open Helpers.Testing
         open Core
