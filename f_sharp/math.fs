@@ -39,6 +39,11 @@ namespace Helpers.Math
                     (get_sieve_for_x_values x)
                 )
 
+        let bigint (x : int) = bigint x
+        let factorial x = [1 .. x] |> List.map bigint |> List.fold (*) 1I
+
+        let get_digits x = ((x.ToString()).ToCharArray()) |> Array.map string |> Array.map int |> Array.toList
+
         let memoize func =
             let lookup_table = (new System.Collections.Generic.Dictionary<_,_>())
             fun x ->
@@ -78,3 +83,9 @@ namespace Helpers.Math
 
             run_test "get_primes_up_to 10" [2; 3; 5; 7] (get_primes_up_to 10)
             run_test "get_primes_up_to 19" [2; 3; 5; 7; 11; 13; 17; 19] (get_primes_up_to 19)
+
+            run_test "factorial 0" 1I (factorial 0)
+            run_test "factorial 4" 24I (factorial 4)
+            run_test "factorial 20" 2432902008176640000I (factorial 20)
+
+            run_test "get_digits 12345" [1; 2; 3; 4; 5] (get_digits 12345)
