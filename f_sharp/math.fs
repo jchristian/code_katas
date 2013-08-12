@@ -1,5 +1,32 @@
 namespace Helpers.Math
     module Core =
+        let get_prime_factors (x : bigint) =
+            let rec loop acc current = function
+                | n when n > current -> List.rev acc
+                | n when current % n = 0I -> loop (n :: acc) (current / n) n
+                | n -> loop acc current (n + 1I)
+            loop [] x 2I
+
+        let rec get_common_values list1 list2 =
+            if List.isEmpty list1 || List.isEmpty list2 then
+                []
+            else
+                let list1_head = list1.Head
+                let list2_head = list2.Head
+                
+                if list1_head = list2_head then
+                    list1_head :: (get_common_values (list1.Tail) (list2.Tail))
+                else if list1_head > list2_head then
+                    get_common_values list1 (list2.Tail)
+                else
+                    get_common_values (list1.Tail) list2
+
+        let simplify (n, d) =
+            let prime_factors_of_n = get_prime_factors n
+            let prime_factors_of_d = get_prime_factors d
+            let largest_common_divisor = get_common_values prime_factors_of_n prime_factors_of_d |> List.fold (*) 1I
+            (n / largest_common_divisor, d / largest_common_divisor)
+
         let get_divisors x =
             let rec loop acc = function
                 | cur when x = 1I -> [1I] |> Set.ofList
@@ -58,7 +85,25 @@ namespace Helpers.Math
         open Helpers.Testing
         open Core
         
-        let run_tests = 
+        let run_tests =
+            run_test "get_common_values [] []" [] (get_common_values [] [])
+            run_test "get_common_values [1] []" [] (get_common_values [1] [])
+            run_test "get_common_values [1] [2]" [] (get_common_values [1] [2])
+            run_test "get_common_values [2] [2]" [2] (get_common_values [2] [2])
+            run_test "get_common_values [1; 2] [2]" [2] (get_common_values [1; 2] [2])
+            run_test "get_common_values [1; 2; 2; 3] [2; 3; 4]" [2; 3] (get_common_values [1; 2; 2; 3] [2; 3; 4])
+            run_test "get_common_values [1; 2; 2; 3; 5] [2; 2; 4; 5]" [2; 2; 5] (get_common_values [1; 2; 2; 3; 5] [2; 2; 4; 5])
+
+            run_test "simplify (2, 4)" (1I, 2I) (simplify (2I, 4I))
+            run_test "simplify (12, 6)" (2I, 1I) (simplify (12I, 6I))
+            run_test "simplify (21, 25)" (21I, 25I) (simplify (21I, 25I))
+            
+            run_test "get_prime_factors 2" [2I] (get_prime_factors 2I)
+            run_test "get_prime_factors 4" [2I; 2I] (get_prime_factors 4I)
+            run_test "get_prime_factors 6" [2I; 3I] (get_prime_factors 6I)
+            run_test "get_prime_factors 12" [2I; 2I; 3I] (get_prime_factors 12I)
+            run_test "get_prime_factors 23" [23I] (get_prime_factors 23I)
+
             run_test "get_divisors 0" [] (get_divisors 0I)
             run_test "get_divisors 1" [1I] (get_divisors 1I)
             run_test "get_divisors 3" [1I; 3I] (get_divisors 3I)
