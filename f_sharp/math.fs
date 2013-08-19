@@ -71,6 +71,19 @@ namespace Helpers.Math
 
         let get_digits x = ((x.ToString()).ToCharArray()) |> Array.map string |> Array.map int |> Array.toList
 
+        let is_palindrome x =
+            let remove_ends (str : string) =
+                str.Substring(1, ((String.length str) - 2))
+
+            let are_ends_equal (str : string) =
+                str.Substring(0, 1).Equals(str.Substring((String.length str) - 1, 1))
+
+            let rec inner_is_palindrome = function
+                | n when (String.length n) < 2 -> true
+                | n when (are_ends_equal n) <> true -> false
+                | n -> inner_is_palindrome (remove_ends n)
+            inner_is_palindrome x
+
         let memoize func =
             let lookup_table = (new System.Collections.Generic.Dictionary<_,_>())
             fun x ->
@@ -134,3 +147,10 @@ namespace Helpers.Math
             run_test "factorial 20" 2432902008176640000I (factorial 20)
 
             run_test "get_digits 12345" [1; 2; 3; 4; 5] (get_digits 12345)
+
+            run_test "is_palindrome 2" true (is_palindrome "2")
+            run_test "is_palindrome 20" false (is_palindrome "20")
+            run_test "is_palindrome 22" true (is_palindrome "22")
+            run_test "is_palindrome 202" true (is_palindrome "202")
+            run_test "is_palindrome 2002" true (is_palindrome "2002")
+            run_test "is_palindrome 2022" false (is_palindrome "2012")
