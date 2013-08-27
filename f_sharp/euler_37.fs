@@ -2,25 +2,6 @@ open System
 open Helpers.Testing
 open Helpers.Math.Core
 
-let rec is_x_divisible_by x = function
-    | [] -> false
-    | list when list.Head > (int (System.Math.Sqrt (float x))) -> false
-    | list when (x % list.Head) = 0 -> true
-    | list -> is_x_divisible_by x list.Tail
-
-let mutable primes = []
-let mutable highest_prime = 1
-let primes_up_to x =
-    let rec loop = function
-        | cur when cur > x -> ()
-        | cur ->
-            if not (is_x_divisible_by cur primes) then
-                primes <- primes @ [cur]
-                highest_prime <- cur
-            loop (cur + 1)
-    loop (highest_prime + 1)
-    primes
-
 let get_root x = int (Math.Sqrt((double x)))
 
 let is_prime n =
