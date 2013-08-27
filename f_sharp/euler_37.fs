@@ -83,12 +83,12 @@ let main =
                 | head :: tail ->
                     let potential_match = cur * 10 + head
                     if is_truncatably_prime potential_match then
-                        (potential_match :: (loop potential_match [1; 3; 5; 7; 9])) @ (loop cur tail)
+                        (potential_match :: (loop potential_match [1; 3; 7; 9])) @ (loop cur tail)
                     else if memoized_is_prime potential_match then
-                        (loop potential_match  [1; 3; 5; 7; 9]) @ loop cur tail
+                        (loop potential_match  [1; 3; 7; 9]) @ loop cur tail
                     else
                         loop cur tail
-            [2; 3; 5; 7] |> List.map (fun elem -> loop elem  [1; 3; 5; 7; 9]) |> List.reduce (@)
+            [2; 3; 5; 7] |> List.map (fun elem -> loop elem  [1; 3; 7; 9]) |> List.reduce (@)
         get_all_truncatably_primes |> List.reduce (+))
 
 [<STAThread>]
