@@ -2,7 +2,7 @@ open System
 open Helpers.Testing
 open Helpers.Math.Core
 
-let add_multiply = (fun x y -> x() + y) >> (*)
+let add x y = 100 * x + y
+let add2 = add 2
 
-//printfn "%A" (add_multiply 2 3)
-printfn "%A" (add_multiply)
+printfn "%A" ((20 |> add) 2)
