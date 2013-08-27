@@ -24,14 +24,10 @@ let primes_up_to x =
 let get_root x = int (Math.Sqrt((double x)))
 
 let is_prime n =
-    match n with
-    | n when n <= 1 -> false 
-    | _ ->
-        let rec check_prime number check =
-            match check with
-            | 1 | 0 -> true
-            | _ -> not (number % check = 0) && check_prime number (check - 1)
-        check_prime n (get_root n)
+  if n <= 1 then false
+  elif n = 2 then true
+  elif n % 2 = 0 then false
+  else seq { 3 .. 2 .. int(sqrt(float(n))) } |> Seq.forall (fun i -> n % i <> 0)
 
 let memoized_is_prime = memoize is_prime
 
