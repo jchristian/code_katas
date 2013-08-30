@@ -2,7 +2,8 @@ open System
 open Helpers.Testing
 open Helpers.Math.Core
 
-let add x y = 100 * x + y
-let add2 = add 2
+let data = [1; 2; 3; 4]
+let digits = [1 .. 9]
+let acc = 
 
-printfn "%A" ((20 |> add) 2)
+printfn "%A" (data |> List.fold acc true)
