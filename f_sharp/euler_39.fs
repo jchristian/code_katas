@@ -12,10 +12,10 @@ let right_triangles_with_sum_up_to x =
         |> List.map (fun b -> (get_a (double b) (double c), b, c))
         |> List.filter (fun (a, _, _) -> (Math.Ceiling(a)) = a || (Math.Floor(a)) = a)
         |> List.map (fun (a, b, c) -> ((int a), b, c))
-        
+
     [1 .. x]
     |> List.collect get_integral_triangles
-    |> List.choose (fun (a, b, c) -> if a + b + c <= 1000 then Some((a, b, c)) else None)
+    |> List.filter (fun (a, b, c) -> a + b + c <= 1000)
 
 run_test "get_floor 5" 4 (get_floor 5)
 run_test "get_floor 10" 8 (get_floor 10)
