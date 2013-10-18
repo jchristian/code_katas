@@ -2,8 +2,6 @@ open System
 open Helpers.Testing
 open Helpers.Math.Core
 
-let get_root x = int (Math.Sqrt((double x)))
-
 let is_prime n =
   if n <= 1 then false
   elif n = 2 then true
